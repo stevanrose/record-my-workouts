@@ -1,0 +1,31 @@
+version: "3.8"
+volumes:
+  postgres_workout_data:
+    driver: local
+services:
+  postgres:
+    image: postgres
+    volumes:
+      - postgres_workout_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: record_my_workouts_db
+      POSTGRES_USER: workout
+      POSTGRES_PASSWORD: workout
+    ports:
+      - "5460:5432"
+    networks:
+      - workout-network
+  pgadmin:
+    container_name: workout_pgadmin4_container
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5058:80"
+    networks:
+      - workout-network
+networks:
+  workout-network:
+    name: workout-network
