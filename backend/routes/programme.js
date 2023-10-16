@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+
 const Validator = require("../middlewares/Validator");
 
 const { PrismaClient, Prisma } = require("@prisma/client");

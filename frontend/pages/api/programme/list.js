@@ -12,7 +12,7 @@ export default async function handler(req, res) {
 
   try {
     const response = await axios.get(url);
-    console.log(response.data.results);
+    console.log(response.data.programmes);
     res.status(response.status).json({ data: response.data });
   } catch (error) {
     console.log(error);

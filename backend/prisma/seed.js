@@ -28,6 +28,18 @@ const programmes = [
   },
 ];
 
+const exercises = [
+  {
+    name: "Warm up - Bike Erg",
+    description: "Moderate warm up at a medium RPE",
+  },
+  {
+    name: "Crab walk with booty band",
+    description: "15-20 steps each way",
+  },
+
+];
+
 async function main() {
   console.log(`Start seeding ...`);
   for (const p of programmes) {
